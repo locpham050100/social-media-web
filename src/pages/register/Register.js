@@ -1,5 +1,6 @@
 import React from "react";
 import "./register.scss";
+import { Link } from "react-router-dom";
 
 function Register() {
   return (
@@ -13,7 +14,9 @@ function Register() {
             nghiệm người dùng làm trọng tâm.
           </p>
           <span>Bạn đã có tài khoản ?</span>
-          <button>Đăng nhập</button>
+          <Link to="/login">
+            <button>Đăng nhập</button>
+          </Link>
         </div>
 
         <div className="right">

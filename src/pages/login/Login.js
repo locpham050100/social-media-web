@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./login.scss";
 
 function Login() {
@@ -13,7 +14,9 @@ function Login() {
             nghiệm người dùng làm trọng tâm.
           </p>
           <span>Bạn chưa có tài khoản ?</span>
-          <button>Đăng kí</button>
+          <Link to="/register">
+            <button>Đăng kí</button>
+          </Link>
         </div>
 
         <div className="right">
