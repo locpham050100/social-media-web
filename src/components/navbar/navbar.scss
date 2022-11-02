@@ -6,6 +6,9 @@
   height: 4rem;
   border: 1px solid lightgrey;
   font-size: 5rem;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
   .left {
     display: flex;
     align-items: center;
