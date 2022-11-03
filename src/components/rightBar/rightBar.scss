@@ -7,4 +7,77 @@
   &::-webkit-scrollbar {
     display: none;
   }
+  .container {
+    padding: 2rem;
+    .item {
+      padding: 2rem;
+      margin-bottom: 2rem;
+      -webkit-box-shadow: 0px 0px 10px 0px rgba(227, 223, 227, 1);
+      -moz-box-shadow: 0px 0px 10px 0px rgba(227, 223, 227, 1);
+      box-shadow: 0px 0px 10px 0px rgba(227, 223, 227, 1);
+
+      span {
+        color: gray;
+        font-size: 1.8rem;
+      }
+      .user {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 2rem 0;
+        .userInfo {
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+          position: relative;
+          img {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+          .online {
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 50%;
+            background-color: lightgreen;
+            position: absolute;
+            top: 0;
+            left: 3rem;
+          }
+          span {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #000;
+          }
+          p {
+            color: gray;
+            font-size: 1.5rem;
+          }
+        }
+        .time {
+          font-size: 1.2rem;
+        }
+        .buttons {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          font-size: 2rem;
+          button {
+            border: none;
+            padding: 0.5rem;
+            color: #fff;
+            cursor: pointer;
+
+            &:first-child {
+              background-color: #cc00cc;
+            }
+            &:last-child {
+              background-color: #9933ff;
+            }
+          }
+        }
+      }
+    }
+  }
 }
