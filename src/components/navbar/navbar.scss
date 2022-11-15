@@ -1,62 +1,67 @@
+@import "../../style.scss";
+
 .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  height: 4rem;
-  border: 1px solid lightgrey;
-  font-size: 5rem;
-  position: sticky;
-  top: 0;
-  background-color: #fff;
-  .left {
+  @include themify($themes) {
     display: flex;
     align-items: center;
-    gap: 3rem;
-    .icon-navbar {
-      font-size: 2.5rem;
-    }
-
-    span {
-      font-weight: bold;
-      font-size: 3rem;
-      color: #cc00cc;
-    }
-    .search {
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    height: 4rem;
+    border: 1px solid themed("border");
+    font-size: 5rem;
+    position: sticky;
+    top: 0;
+    background-color: themed("bg");
+    color: themed("textColor");
+    .left {
       display: flex;
       align-items: center;
-      gap: 1rem;
-      border: 1px solid lightgrey;
-      border-radius: 0.5rem;
-      padding: 0.5rem;
-      input {
-        font-size: 1.5rem;
-        border: none;
-        width: 50rem;
+      gap: 3rem;
+      .icon-navbar {
+        font-size: 2.5rem;
       }
-    }
-  }
 
-  .right {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    .icon-navbar {
-      font-size: 2.5rem;
-    }
-    .user {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      font-weight: 500;
-      font-size: 2.5rem;
-      img {
-        width: 3rem;
-        height: 3rem;
-        border-radius: 50%;
-        object-fit: cover;
-      }
       span {
+        font-weight: bold;
+        font-size: 3rem;
+        color: #cc00cc;
+      }
+      .search {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        border: 1px solid themed("border");
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        input {
+          font-size: 1.5rem;
+          border: none;
+          width: 50rem;
+          background-color: transparent;
+          color: themed("textColor");
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      .icon-navbar {
+        font-size: 2.5rem;
+      }
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-weight: 500;
+        font-size: 2.5rem;
+        img {
+          width: 3rem;
+          height: 3rem;
+          border-radius: 50%;
+          object-fit: cover;
+        }
       }
     }
   }
