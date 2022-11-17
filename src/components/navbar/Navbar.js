@@ -1,7 +1,10 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React from "react";
+import { React, useContext } from "react";
 import "./navbar.scss";
 import { Link } from "react-router-dom";
+
+import { DarkModeContext } from "../../context/darkModeContext";
+import { AuthContext } from "../../context/authContext";
 
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
@@ -10,8 +13,12 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
+import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
 
 function Navbar() {
+  const { toggle, darkMode } = useContext(DarkModeContext);
+  const { currentUser } = useContext(AuthContext);
+
   return (
     <div className="navbar">
       <div className="left">
@@ -19,7 +26,11 @@ function Navbar() {
           <span>Vitus</span>
         </Link>
         <HomeOutlinedIcon className="icon-navbar" />
-        <DarkModeOutlinedIcon className="icon-navbar" />
+        {darkMode ? (
+          <WbSunnyOutlinedIcon className="icon-navbar" onClick={toggle} />
+        ) : (
+          <DarkModeOutlinedIcon className="icon-navbar" onClick={toggle} />
+        )}
         <GridViewOutlinedIcon className="icon-navbar" />
         <div className="search">
           <SearchOutlinedIcon className="icon-navbar" />
@@ -31,8 +42,8 @@ function Navbar() {
         <EmailOutlinedIcon className="icon-navbar" />
         <NotificationsOutlinedIcon className="icon-navbar" />
         <div className="user">
-          <img src="https://static.independent.co.uk/2022/08/21/10/newFile-1.jpg?quality=75&width=982&height=726&auto=webp"></img>
-          <span>Loc Pham</span>
+          <img src={currentUser.profilePic} alt="" />
+          <span>{currentUser.name}</span>
         </div>
       </div>
     </div>

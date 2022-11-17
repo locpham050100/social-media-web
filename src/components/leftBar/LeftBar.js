@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React from "react";
+import { React, useContext } from "react";
 import "./leftBar.scss";
 
 import Friends from "./img/friends-icon.png";
@@ -16,17 +16,18 @@ import Tutorial from "./img/tutorial-icon.png";
 import Fundraiser from "./img/fundraiser-icon.png";
 import Courses from "./img/courses-icon.png";
 
+import { AuthContext } from "../../context/authContext";
+
 function LeftBar() {
+  const { currentUser } = useContext(AuthContext);
+
   return (
     <div className="leftBar">
       <div className="container">
         <div className="menu">
           <div className="user">
-            <img
-              src="https://static.independent.co.uk/2022/08/21/10/newFile-1.jpg?quality=75&width=982&height=726&auto=webp"
-              alt=""
-            ></img>
-            <span>Loc Pham</span>
+            <img src={currentUser.profilePic} alt=""></img>
+            <span>{currentUser.name}</span>
           </div>
           <div className="item">
             <img src={Friends} alt="" />

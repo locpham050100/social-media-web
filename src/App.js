@@ -11,7 +11,8 @@ import {
 } from "react-router-dom";
 
 import { useContext } from "react";
-import { DarkModeContext } from "./contexT/darkModeContext";
+import { DarkModeContext } from "./context/darkModeContext";
+import { AuthContext } from "./context/authContext";
 
 import Navbar from "./components/navbar/Navbar";
 import LeftBar from "./components/leftBar/LeftBar";
@@ -19,7 +20,7 @@ import RightBar from "./components/rightBar/RightBar";
 import "./style.scss";
 
 function App() {
-  const currentUser = true;
+  const { currentUser } = useContext(AuthContext);
 
   const { darkMode } = useContext(DarkModeContext);
   console.log(darkMode);
